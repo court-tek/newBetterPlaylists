@@ -11,7 +11,7 @@ let defaultStyle = {
 }
 
 let aggStyle = {
-  width: "40%",
+  // width: "40%",
   display: "inline-block"
 }
 
@@ -23,6 +23,10 @@ let headerStyle = {
   fontSize: "40px",
   textAlign: "center",
   fontWeight: "700"
+}
+
+let playFlex = {
+  flex: "0 0 calc(100% / 12 * 4)"
 }
 
 const initialState = {
@@ -39,7 +43,7 @@ const Filter = state =>
   h("input", {type: 'text'})
 
 const Playlist = state => 
-  h("div",{style: {width: "25%"}}, [
+  h("div",{style: {width: "100%", padding: "20px"}}, [
     h("h3", {style: {fontSize: "30px"}}, "Playlist Name"),
     h("ul",null, [
       h("li",{style: {...listStyle}}, "Killing Me"),
@@ -49,18 +53,26 @@ const Playlist = state =>
     ])
   ])
 
-const view = (state) => 
+const view = state => 
  h("div", {style: {...defaultStyle, ...headerStyle}}, ["Title",
   h("div",{}, [
     Aggregate(),
     Aggregate(),
   ]),
   Filter(),
-  h("div", {style: {display: "flex"}}, [
-    Playlist(),
-    Playlist(),
-    Playlist(),
-    Playlist(),
+  h("div", {style: {display: "flex", justifyContent: "center", flexWrap: "wrap"}}, [
+    h("div", {style: {...playFlex}}, [
+      Playlist(),
+      Playlist(),
+    ]),
+    h("div", {style: {...playFlex}}, [
+      Playlist(),
+      Playlist(),
+    ]),
+    h("div", {style: {...playFlex}}, [
+      Playlist(),
+      Playlist(),
+    ]),
   ])
  ])
 
