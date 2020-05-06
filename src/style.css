@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+  --domoArigatoMr: 'Roboto', sans-serif;
+  --thunderCloud: #505160;
+  --blanco: #ffffff;
+}
+
+body {
+  font-family: var(--domoArigatoMr);
+  background-color: var(--thunderCloud);
+}

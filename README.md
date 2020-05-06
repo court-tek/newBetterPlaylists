@@ -1,2 +1,0 @@
-# newBetterPlaylists
-Created with CodeSandbox
